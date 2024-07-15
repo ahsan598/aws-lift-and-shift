@@ -15,7 +15,7 @@
 ### Project Architecture:
 ##### Deploying this Quick Start for a new virtual private cloud (VPC) with default parameters builds the following Aurora MySQL environment in the AWS Cloud.
 
-![Project Diagram](https://github.com/ahsan598/aws-project-1/blob/main/amazon-aurora-db-in-aws.svg)
+![Project Diagram](https://github.com/ahsan598/aws-project-1/blob/main/aws-lift-and-shift-webapp.svg)
 
 
 ### Deployment:
