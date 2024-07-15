@@ -37,24 +37,92 @@ Components: Redis or Memcached clusters were set up, with replication and automa
 ![Project Diagram](https://github.com/ahsan598/aws-lift-and-shift-webapp/blob/main/aws-lift-and-shift-webapp.svg)
 
 
-### Implementation Summary:
+### Implementation:
 
-1. Design Phase:
-Planned the architecture, including VPC design, subnetting, and security group configurations.
-Defined IAM roles and policies to ensure secure access to resources.
+1. Virtual Private Cloud (VPC) Setup
+1.1. Create a VPC
 
-2. Deployment Phase:
-Set up the VPC with necessary components (subnets, route tables, gateways).
-Deployed the application using Elastic Beanstalk, linking it to ELB for load balancing.
-Configured RDS for database management and ElastiCache for caching needs.
-Integrated Amazon MQ for messaging and ensured security and monitoring configurations.
+Define a CIDR block, e.g., 10.0.0.0/16.
+1.2. Create Subnets
 
-3. Optimization Phase:
-Tuned configurations for performance optimization, including caching strategies with ElastiCache.
-Implemented monitoring and logging with CloudWatch and Elastic Beanstalk health checks.
+Create public and private subnets in multiple availability zones for high availability.
+1.3. Configure Route Tables
 
-4. Maintenance Phase:
-Regularly updated IAM policies to align with changing security requirements.
-Monitored performance metrics and scaled resources as needed.
-Managed backups, patching, and recovery processes for RDS and other services.
-This approach ensured a seamless lift and shift of the web application to AWS, leveraging the cloud's scalability, reliability, and security features.
+Public subnet route table: Add a route to the Internet Gateway.
+Private subnet route table: Add a route to the NAT Gateway for outbound traffic.
+1.4. Internet Gateway and NAT Gateway
+
+Attach an Internet Gateway to the VPC.
+Create and attach a NAT Gateway to the public subnet.
+1.5. Security Groups
+
+Define security groups to control inbound and outbound traffic for your instances.
+2. Identity and Access Management (IAM) Setup
+2.1. Create IAM Roles
+
+Define roles for EC2 instances to access AWS services like S3, RDS, etc.
+2.2. Attach Policies
+
+Attach appropriate policies to IAM roles (e.g., AmazonS3ReadOnlyAccess, AmazonRDSFullAccess).
+3. EC2 Instances with Tomcat Server
+3.1. Launch EC2 Instances
+
+Launch instances in the public subnet for the web application and private subnet for backend services.
+3.2. Install and Configure Tomcat
+
+Install Tomcat on EC2 instances:
+sh
+Copy code
+sudo yum install tomcat -y
+sudo systemctl start tomcat
+sudo systemctl enable tomcat
+Deploy your web application to the Tomcat server.
+4. Application Load Balancer (ALB)
+4.1. Create an ALB
+
+Define listeners for HTTP and HTTPS.
+Configure target groups to include the EC2 instances running the Tomcat server.
+4.2. Configure Health Checks
+
+Set up health checks for the target groups to ensure only healthy instances receive traffic.
+5. Amazon RDS for Database
+5.1. Launch Amazon RDS Instance
+
+Choose the appropriate database engine (e.g., MySQL, PostgreSQL).
+Configure the instance details and connect it to the private subnet.
+5.2. Security Groups
+
+Ensure the RDS security group allows traffic from the EC2 instances’ security group.
+6. RabbitMQ Setup
+6.1. Deploy RabbitMQ on EC2
+
+Launch an EC2 instance in the private subnet.
+Install RabbitMQ:
+sh
+Copy code
+sudo yum install rabbitmq-server -y
+sudo systemctl start rabbitmq-server
+sudo systemctl enable rabbitmq-server
+6.2. Configure Security Groups
+
+Allow traffic on the default RabbitMQ port (5672) from the relevant security groups.
+7. Memcached Setup
+7.1. Deploy Memcached on EC2
+
+Launch an EC2 instance in the private subnet.
+Install Memcached:
+sh
+Copy code
+sudo yum install memcached -y
+sudo systemctl start memcached
+sudo systemctl enable memcached
+7.2. Configure Security Groups
+
+Allow traffic on the default Memcached port (11211) from the relevant security groups.
+8. DNS Zone & Route 53 DNS Private Zone
+8.1. Create Route 53 Hosted Zone
+
+Create a private hosted zone associated with your VPC.
+8.2. Configure DNS Records
+
+Add A and CNAME records to route traffic to the ALB and internal services.
