@@ -80,8 +80,8 @@ Components: Redis or Memcached clusters were set up, with replication and automa
 sudo yum install tomcat -y
 sudo systemctl start tomcat
 sudo systemctl enable tomcat
-Deploy your web application to the Tomcat server
 ```
+- Deploy your web application to the Tomcat server
 
 
 ##### 4. Application Load Balancer (ALB)
