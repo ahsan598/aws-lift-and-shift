@@ -124,11 +124,11 @@ sudo systemctl enable rabbitmq-server
 7.1. Deploy Memcached on EC2
 - Launch an EC2 instance in the private subnet and Install Memcached:
 
-\```sh
+\`sh
 sudo yum install memcached -y
 sudo systemctl start memcached
 sudo systemctl enable memcached
-\```
+\`
 
 7.2. Configure Security Groups
 - Allow traffic on the default Memcached port (11211) from the relevant security groups.
