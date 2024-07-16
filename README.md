@@ -124,7 +124,7 @@ sudo systemctl enable rabbitmq-server
 7.1. Deploy Memcached on EC2
 - Launch an EC2 instance in the private subnet and Install Memcached:
 
-\`sh
+\`
 sudo yum install memcached -y
 sudo systemctl start memcached
 sudo systemctl enable memcached
