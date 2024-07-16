@@ -12,28 +12,28 @@
 - Components: IAM Users, Groups, Roles, and Policies were used to manage permissions and ensure least privilege access.
 
 ##### 3. Elastic Cloud Compute (EC2):
-Definition: Amazon EC2 provides scalable computing capacity in the AWS cloud, allowing developers to run virtual servers (instances) to host applications. EC2 enables you to increase or decrease capacity within minutes, thus providing a flexible and cost-effective way to manage computing resources.
+- Definition: Amazon EC2 provides scalable computing capacity in the AWS cloud, allowing developers to run virtual servers (instances) to host applications. EC2 enables you to increase or decrease capacity within minutes, thus providing a flexible and cost-effective way to manage computing resources.
 
 ##### 4. Application Load Balancer (ALB):
-Definition: The Application Load Balancer (ALB) is a managed load balancing service that operates at the application layer (Layer 7). It distributes incoming application traffic across multiple targets, such as EC2 instances, in multiple Availability Zones.
+- Definition: The Application Load Balancer (ALB) is a managed load balancing service that operates at the application layer (Layer 7). It distributes incoming application traffic across multiple targets, such as EC2 instances, in multiple Availability Zones.
 
 ##### 5. Amazon Relational Database Service (RDS):
 - Definition: Amazon RDS is a managed relational database service that supports several database engines including MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB. It simplifies database management tasks such as backups, patching, and scaling.
 - Components: Multi-AZ deployment for high availability, automated backups, and read replicas for improved performance.
 
 ##### 6. Rabbit MQ:
-Definition: RabbitMQ is an open-source message broker that facilitates communication between applications by sending messages between them in an asynchronous manner. It supports various messaging protocols.
+- Definition: RabbitMQ is an open-source message broker that facilitates communication between applications by sending messages between them in an asynchronous manner. It supports various messaging protocols.
 
 ##### 7. MemCache:
-Definition: Memcached is an in-memory key-value store for small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering. It is used to speed up dynamic web applications by alleviating database load.
+- Definition: Memcached is an in-memory key-value store for small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering. It is used to speed up dynamic web applications by alleviating database load.
 
 ##### 8. Route 53 & DNS Zones:
-Route53
-Definition: Amazon Route 53 is a scalable and highly available Domain Name System (DNS) web service designed to route end-user requests to internet applications.
+8.1 Route53
+- Definition: Amazon Route 53 is a scalable and highly available Domain Name System (DNS) web service designed to route end-user requests to internet applications.
 
-DNS Zones:
-Public DNS Zone: Manages DNS records for a domain accessible on the internet.
-Private DNS Zone: Manages DNS records within a VPC, accessible only to VPC resources.
+8.2 DNS Zones:
+- Public DNS Zone: Manages DNS records for a domain accessible on the internet.
+- Private DNS Zone: Manages DNS records within a VPC, accessible only to VPC resources.
 
 
 ### Project Architecture:
