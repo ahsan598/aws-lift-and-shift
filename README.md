@@ -32,7 +32,7 @@ Components: Redis or Memcached clusters were set up, with replication and automa
 
 
 ### Project Architecture:
-##### Deploying a new virtual private cloud (VPC) with default parameters builds the following environment in the AWS Cloud.
+##### Deploying a new virtual private cloud (VPC) with default parameters builds the following environment on the AWS Cloud.
 
 ![Project Diagram](https://github.com/ahsan598/aws-lift-and-shift-webapp/blob/main/aws-lift-and-shift-webapp.png)
 
@@ -76,12 +76,12 @@ Components: Redis or Memcached clusters were set up, with replication and automa
 3.2. Install and Configure Tomcat
 - Install Tomcat on EC2 instances:
 
-\``` sh
+```sh
 sudo yum install tomcat -y
 sudo systemctl start tomcat
 sudo systemctl enable tomcat
 Deploy your web application to the Tomcat server
-\```
+```
 
 
 ##### 4. Application Load Balancer (ALB)
@@ -109,11 +109,11 @@ Deploy your web application to the Tomcat server
 6.1. Deploy RabbitMQ on EC2
 - Launch an EC2 instance in the private subnet and Install RabbitMQ:
 
-\``` sh
+```sh
 sudo yum install rabbitmq-server -y
 sudo systemctl start rabbitmq-server
 sudo systemctl enable rabbitmq-server
-\```
+```
 
 6.2. Configure Security Groups
 - Allow traffic on the default RabbitMQ port (5672) from the relevant security groups.
@@ -124,11 +124,11 @@ sudo systemctl enable rabbitmq-server
 7.1. Deploy Memcached on EC2
 - Launch an EC2 instance in the private subnet and Install Memcached:
 
-\`
+```sh
 sudo yum install memcached -y
 sudo systemctl start memcached
 sudo systemctl enable memcached
-\`
+```
 
 7.2. Configure Security Groups
 - Allow traffic on the default Memcached port (11211) from the relevant security groups.
