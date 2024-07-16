@@ -2,14 +2,14 @@
 
 ### Resources created in this project:
 ##### 1. Virtual Private Cloud (VPC):
-Definition: VPC allows you to launch AWS resources into a virtual network that you've defined.
-Usage: The web application was deployed within a VPC to ensure network isolation and security.
-Components: Subnets (public and private), Internet Gateway, NAT Gateway, Route Tables, and Network ACLs were configured to control traffic flow and enhance security.
+- Definition: VPC allows you to launch AWS resources into a virtual network that you've defined.
+- Usage: The web application was deployed within a VPC to ensure network isolation and security.
+- Components: Subnets (public and private), Internet Gateway, NAT Gateway, Route Tables, and Network ACLs were configured to control traffic flow and enhance security.
 
 ##### 2. Identity and Access Management (IAM):
-Definition: IAM provides secure control of access to AWS services and resources.
-Usage: IAM roles and policies were created to define permissions for different users and services. Roles were assigned to AWS services like EC2, RDS, and Beanstalk to manage resources securely.
-Components: IAM Users, Groups, Roles, and Policies were used to manage permissions and ensure least privilege access.
+- Definition: IAM provides secure control of access to AWS services and resources.
+- Usage: IAM roles and policies were created to define permissions for different users and services. Roles were assigned to AWS services like EC2, RDS, and Beanstalk to manage resources securely.
+- Components: IAM Users, Groups, Roles, and Policies were used to manage permissions and ensure least privilege access.
 
 ##### 3. Elastic Cloud Compute (EC2):
 Definition: Amazon EC2 provides scalable computing capacity in the AWS cloud, allowing developers to run virtual servers (instances) to host applications. EC2 enables you to increase or decrease capacity within minutes, thus providing a flexible and cost-effective way to manage computing resources.
@@ -18,8 +18,8 @@ Definition: Amazon EC2 provides scalable computing capacity in the AWS cloud, al
 Definition: The Application Load Balancer (ALB) is a managed load balancing service that operates at the application layer (Layer 7). It distributes incoming application traffic across multiple targets, such as EC2 instances, in multiple Availability Zones.
 
 ##### 5. Amazon Relational Database Service (RDS):
-Definition: Amazon RDS is a managed relational database service that supports several database engines including MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB. It simplifies database management tasks such as backups, patching, and scaling.
-Components: Multi-AZ deployment for high availability, automated backups, and read replicas for improved performance.
+- Definition: Amazon RDS is a managed relational database service that supports several database engines including MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB. It simplifies database management tasks such as backups, patching, and scaling.
+- Components: Multi-AZ deployment for high availability, automated backups, and read replicas for improved performance.
 
 ##### 6. Rabbit MQ:
 Definition: RabbitMQ is an open-source message broker that facilitates communication between applications by sending messages between them in an asynchronous manner. It supports various messaging protocols.
