@@ -1,34 +1,39 @@
 ## Detailed Overview of Lift & Shift Web App on AWS Cloud
 
 ### Resources created in this project:
-1. Virtual Private Cloud (VPC)
+##### 1. Virtual Private Cloud (VPC):
 Definition: VPC allows you to launch AWS resources into a virtual network that you've defined.
 Usage: The web application was deployed within a VPC to ensure network isolation and security.
 Components: Subnets (public and private), Internet Gateway, NAT Gateway, Route Tables, and Network ACLs were configured to control traffic flow and enhance security.
-2. Identity and Access Management (IAM)
+
+##### 2. Identity and Access Management (IAM):
 Definition: IAM provides secure control of access to AWS services and resources.
 Usage: IAM roles and policies were created to define permissions for different users and services. Roles were assigned to AWS services like EC2, RDS, and Beanstalk to manage resources securely.
 Components: IAM Users, Groups, Roles, and Policies were used to manage permissions and ensure least privilege access.
-3. Elastic Beanstalk
-Definition: Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services.
-Usage: Elastic Beanstalk was used to deploy the web application, handling the deployment details such as capacity provisioning, load balancing, and auto-scaling.
-Components: Environments, Applications, and Application Versions were managed in Beanstalk, with configuration for health monitoring and updates.
-4. Elastic Load Balancer (ELB)
-Definition: ELB automatically distributes incoming application traffic across multiple targets, such as EC2 instances.
-Usage: An ELB was used to ensure high availability and fault tolerance by distributing incoming traffic to multiple EC2 instances within the VPC.
-Components: Application Load Balancer (ALB) was configured with target groups and listeners to manage HTTP/HTTPS traffic effectively.
-5. Relational Database Service (RDS)
-Definition: RDS makes it easy to set up, operate, and scale a relational database in the cloud.
-Usage: RDS was used to host the web application's database, ensuring high availability, automated backups, and seamless scaling.
+
+##### 3. Elastic Cloud Compute (EC2):
+Definition: Amazon EC2 provides scalable computing capacity in the AWS cloud, allowing developers to run virtual servers (instances) to host applications. EC2 enables you to increase or decrease capacity within minutes, thus providing a flexible and cost-effective way to manage computing resources.
+
+##### 4. Application Load Balancer (ALB):
+Definition: The Application Load Balancer (ALB) is a managed load balancing service that operates at the application layer (Layer 7). It distributes incoming application traffic across multiple targets, such as EC2 instances, in multiple Availability Zones.
+
+##### 5. Amazon Relational Database Service (RDS):
+Definition: Amazon RDS is a managed relational database service that supports several database engines including MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB. It simplifies database management tasks such as backups, patching, and scaling.
 Components: Multi-AZ deployment for high availability, automated backups, and read replicas for improved performance.
-6. Amazon MQ
-Definition: Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and operate message brokers.
-Usage: Amazon MQ was used to handle messaging between different components of the web application, ensuring reliable and asynchronous communication.
-Components: Brokers and Queues were configured to manage message flow and ensure durability.
-7. ElastiCache
-Definition: ElastiCache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud.
-Usage: ElastiCache was used to improve application performance by caching frequently accessed data, reducing latency, and offloading read traffic from the database.
-Components: Redis or Memcached clusters were set up, with replication and automatic failover for high availability.
+
+##### 6. Rabbit MQ:
+Definition: RabbitMQ is an open-source message broker that facilitates communication between applications by sending messages between them in an asynchronous manner. It supports various messaging protocols.
+
+##### 7. MemCache:
+Definition: Memcached is an in-memory key-value store for small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering. It is used to speed up dynamic web applications by alleviating database load.
+
+##### 8. Route 53 & DNS Zones:
+Route53
+Definition: Amazon Route 53 is a scalable and highly available Domain Name System (DNS) web service designed to route end-user requests to internet applications.
+
+DNS Zones:
+Public DNS Zone: Manages DNS records for a domain accessible on the internet.
+Private DNS Zone: Manages DNS records within a VPC, accessible only to VPC resources.
 
 
 ### Project Architecture:
@@ -36,6 +41,8 @@ Components: Redis or Memcached clusters were set up, with replication and automa
 
 ![Project Diagram](https://github.com/ahsan598/aws-lift-and-shift-webapp/blob/main/aws-lift-and-shift-webapp.png)
 
+
+This detailed overview provides a step-by-step guide to implementing a Lift & Shift web app on AWS Cloud. By following these steps, we can migrate our application to AWS, ensuring high availability, scalability, and security using AWS services such as VPC, IAM, EC2, ALB, RDS, RabbitMQ, Memcached, and Route 53.
 
 ### Implementation:
 
@@ -141,3 +148,18 @@ sudo systemctl enable memcached
 
 8.2. Configure DNS Records
 - Add A and CNAME records to route traffic to the ALB and internal services.
+
+
+
+
+Note: We can use Amazon MQ in place of Rabbit MQ and ElasticCache instaed of Memcache
+
+##### Amazon MQ
+Definition: Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and operate message brokers.
+Usage: Amazon MQ was used to handle messaging between different components of the web application, ensuring reliable and asynchronous communication.
+Components: Brokers and Queues were configured to manage message flow and ensure durability.
+
+##### ElasticCache
+Definition: ElastiCache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud.
+Usage: ElastiCache was used to improve application performance by caching frequently accessed data, reducing latency, and offloading read traffic from the database.
+Components: Redis or Memcached clusters were set up, with replication and automatic failover for high availability.
