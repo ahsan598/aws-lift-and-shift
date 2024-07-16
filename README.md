@@ -152,14 +152,14 @@ sudo systemctl enable memcached
 
 
 
-Note: We can use Amazon MQ in place of Rabbit MQ and ElasticCache instaed of Memcache
+#### Note: We can use Amazon MQ in place of Rabbit MQ and ElasticCache instaed of Memcache
 
 ##### Amazon MQ
-Definition: Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and operate message brokers.
-Usage: Amazon MQ was used to handle messaging between different components of the web application, ensuring reliable and asynchronous communication.
-Components: Brokers and Queues were configured to manage message flow and ensure durability.
+- Definition: Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and operate message brokers.
+- Usage: Amazon MQ was used to handle messaging between different components of the web application, ensuring reliable and asynchronous communication.
+- Components: Brokers and Queues were configured to manage message flow and ensure durability.
 
 ##### ElasticCache
-Definition: ElastiCache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud.
-Usage: ElastiCache was used to improve application performance by caching frequently accessed data, reducing latency, and offloading read traffic from the database.
-Components: Redis or Memcached clusters were set up, with replication and automatic failover for high availability.
+- Definition: ElastiCache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud.
+- Usage: ElastiCache was used to improve application performance by caching frequently accessed data, reducing latency, and offloading read traffic from the database.
+- Components: Redis or Memcached clusters were set up, with replication and automatic failover for high availability.
