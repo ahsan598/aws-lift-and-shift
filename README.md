@@ -2,7 +2,7 @@
 
 ### Resources created in this project:
 ##### 1. Virtual Private Cloud (VPC):
-- Definition: VPC allows you to launch AWS resources into a virtual network that you've defined.
+- Definition: VPC allows you to launch AWS resources into a virtual network that we've defined.
 - Usage: The web application was deployed within a VPC to ensure network isolation and security.
 - Components: Subnets (public and private), Internet Gateway, NAT Gateway, Route Tables, and Network ACLs were configured to control traffic flow and enhance security.
 
@@ -14,24 +14,33 @@
 ##### 3. Elastic Cloud Compute (EC2):
 - Definition: Amazon EC2 provides scalable computing capacity in the AWS cloud, allowing developers to run virtual servers (instances) to host applications. EC2 enables you to increase or decrease capacity within minutes, thus providing a flexible and cost-effective way to manage computing resources.
 
-##### 4. Application Load Balancer (ALB):
+##### 4. Amazon S3 (Simple Storage Service):
+- Definition: Amazon S3 is a highly scalable and secure object storage service. It is designed for storing and retrieving any amount of data from anywhere on the web. S3 provides durability and availability by storing data across multiple devices and includes robust security features such as encryption and fine-grained access controls.
+
+##### 5. Auto Scaling:
+- Definition: AWS Auto Scaling helps maintain application availability by automatically adjusting Amazon EC2 capacity to match demand. It provides dynamic and scheduled scaling, health checks to replace unhealthy instances, and cost optimization by ensuring the use of necessary resources only when needed.
+
+##### 6. Security Groups:
+- Definition: Security Groups act as virtual firewalls for your Amazon EC2 instances, controlling inbound and outbound traffic. They provide stateful filtering, allowing specific traffic based on IP ranges, protocols, and ports. Security groups integrate with your Virtual Private Cloud (VPC) to enhance network security by allowing detailed access control for your instances.
+
+##### 7. Application Load Balancer (ALB):
 - Definition: The Application Load Balancer (ALB) is a managed load balancing service that operates at the application layer (Layer 7). It distributes incoming application traffic across multiple targets, such as EC2 instances, in multiple Availability Zones.
 
-##### 5. Amazon Relational Database Service (RDS):
+##### 8. Amazon Relational Database Service (RDS):
 - Definition: Amazon RDS is a managed relational database service that supports several database engines including MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB. It simplifies database management tasks such as backups, patching, and scaling.
 - Components: Multi-AZ deployment for high availability, automated backups, and read replicas for improved performance.
 
-##### 6. Rabbit MQ:
+##### 9. Rabbit MQ:
 - Definition: RabbitMQ is an open-source message broker that facilitates communication between applications by sending messages between them in an asynchronous manner. It supports various messaging protocols.
 
-##### 7. MemCache:
+##### 10. MemCache:
 - Definition: Memcached is an in-memory key-value store for small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering. It is used to speed up dynamic web applications by alleviating database load.
 
-##### 8. Route 53 & DNS Zones:
-8.1 Route53
+##### 11. Route 53 & DNS Zones:
+11.1 Route53
 - Definition: Amazon Route 53 is a scalable and highly available Domain Name System (DNS) web service designed to route end-user requests to internet applications.
 
-8.2 DNS Zones:
+11.2 DNS Zones:
 - Public DNS Zone: Manages DNS records for a domain accessible on the internet.
 - Private DNS Zone: Manages DNS records within a VPC, accessible only to VPC resources.
 
@@ -94,7 +103,7 @@ sudo systemctl enable tomcat
 ##### 4. Application Load Balancer (ALB)
 
 4.1. Create an ALB
-- Define listeners for HTTP and HTTPS.
+- Define listeners for HTTP(80) and HTTPS(443).
 - Configure target groups to include the EC2 instances running the Tomcat server.
 
 4.2. Configure Health Checks
