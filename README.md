@@ -2,22 +2,22 @@
 Purpose of Moving to AWS:
 The goal of a "Lift and Shift" migration is to move an on-premises application and its data to AWS with minimal or no changes to the application architecture. Organizations pursue this migration strategy for several reasons:
 
-1. Scalability
+1. **Scalability**
 AWS provides on-demand scalability, allowing the web app to handle traffic spikes without significant upfront investment in hardware.
 
-2. Cost Optimization
+2. **Cost Optimization**
 Organizations can eliminate the need for costly data centers and physical hardware. AWS’s pay-as-you-go pricing model enables cost savings by paying only for resources used.
 
-3. Global Reach
+3. **Global Reach**
 AWS has a wide range of data centers (regions and availability zones) worldwide, enabling reduced latency and a better user experience for global audiences.
 
-4. Reliability and Availability
+4. **Reliability and Availability**
 AWS offers high-availability services with built-in failover and disaster recovery mechanisms to ensure uptime and business continuity.
 
-5. Security and Compliance
+5. **Security and Compliance**
 AWS adheres to industry-standard security and compliance requirements, providing secure hosting with managed access controls, encryption, and monitoring.
 
-6. Faster Time to Market
+6. **Faster Time to Market**
 AWS’s wide array of managed services (e.g., RDS for databases, S3 for storage, etc.) reduces the time required to set up the necessary infrastructure for the application.
 
 
